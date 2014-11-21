@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>FizzBuzz</title>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    </head>
+    <body>
+        
+        <h1>FizzBuzz to 40</h1>
+        <div>
+            <div>
+                <form>
+                    First # <input type="number" id="num1">
+                    Second # <input type="number" id="num2">
+                    <button id="input" onclick="fizzbuzz()" type="button">FizzBuzz!</button>
+                </form>
+            </div>
+            <div id="output"></div>
+        </div>
+        <script>
+            function fizzbuzz()
+            {   
+                $("#output").html("");
+                var num1 = $("#num1").val();
+                var num2 = $("#num2").val();
+            
+                for(var i = 1; i <= 40; i++)
+                {
+                    if(i % (num1 * num2) == 0)
+                    {
+                        $("#output").append("FizzBuzz! <br>");
+                        
+                    }
+                    else if(i % num1 == 0)
+                    {
+                        $("#output").append("Fizz <br>");
+                    }
+                    else if(i % num2 == 0)
+                    {
+                        $("#output").append("Buzz <br>");
+                    }
+                    else
+                    {
+                        $("#output").append(i + "<br>");
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
